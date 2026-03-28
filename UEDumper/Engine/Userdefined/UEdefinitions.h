@@ -78,7 +78,7 @@
 /* UE version settings */
 
 //set your games ue version
-#define UE_VERSION UE_5_05
+#define UE_VERSION UE_NOT_SET
 
 
 /* SDK and MDK generation */

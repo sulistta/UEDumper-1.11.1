@@ -27,7 +27,7 @@ namespace
 	{
 		std::cout
 			<< "Usage: " << argv0 << " [options]\n"
-			<< "  --process <name>         Target process name (e.g. SevenDeadlySins_Origin-Win64-Shipping.exe)\n"
+			<< "  --process <name>         Target process name (e.g. Game-Win64-Shipping.exe)\n"
 			<< "  --pid <pid>              Target process PID\n"
 			<< "  --project <name>         Output directory name under the current working directory\n"
 			<< "  --sdk <stable|experimental|off>\n"

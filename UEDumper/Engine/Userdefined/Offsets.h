@@ -103,19 +103,21 @@ struct Offset
 ///	Use OFFSET_LIVE_EDITOR to display the address in the live editor
 /// offsets.push_back({ OFFSET_ADDRESS | OFFSET_DS | OFFSET_LIVE_EDITOR, "OFFSET_GWORLD", 0x4E0EFF0 });
 
+// Placeholder value used to warn the user that the default offsets must be replaced.
+#define SHOW_README_IF_OFFSETS_ARE_VALUE 0xDEADBEEF
+
 inline std::vector<Offset> setOffsets()
 {
 	std::vector<Offset> offsets;
 
-	// Validated against the current Seven Deadly Sins Origin process at runtime.
+	// Fill these values with the offsets/signatures for your target game.
 	// OFFSET_GNAMES is treated by UEDumper as the direct FName pool base for UE >= 4.23.
-	offsets.push_back({ OFFSET_ADDRESS | OFFSET_DS, "OFFSET_GNAMES", 0x0B9958C0 });
-	offsets.push_back({ OFFSET_ADDRESS | OFFSET_DS, "OFFSET_GOBJECTS", 0x0BA79070 });
-	offsets.push_back({ OFFSET_ADDRESS | OFFSET_DS | OFFSET_LIVE_EDITOR, "OFFSET_GWORLD", 0x0BBF7848 });
+	offsets.push_back({ OFFSET_ADDRESS | OFFSET_DS, "OFFSET_GNAMES", SHOW_README_IF_OFFSETS_ARE_VALUE });
+	offsets.push_back({ OFFSET_ADDRESS | OFFSET_DS, "OFFSET_GOBJECTS", SHOW_README_IF_OFFSETS_ARE_VALUE });
+	offsets.push_back({ OFFSET_ADDRESS | OFFSET_DS | OFFSET_LIVE_EDITOR, "OFFSET_GWORLD", SHOW_README_IF_OFFSETS_ARE_VALUE });
 
 	return offsets;
 }
 
 // No need to change this. If you're reading this file and changed your offsets, you're good.
 // This is part of a check for those who can't read README.md files =)
-#define SHOW_README_IF_OFFSETS_ARE_VALUE 0xDEADBEEF

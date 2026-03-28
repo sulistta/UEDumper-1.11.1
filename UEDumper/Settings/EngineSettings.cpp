@@ -13,6 +13,9 @@ EngineSettings::EngineSettings()
 
 EngineSettings::EngineVersion EngineSettings::getEngineVersion()
 {
+	if (_UE_VERSION < 0 || _UE_VERSION >= static_cast<int>(sizeof(UEVersionNames) / sizeof(UEVersionNames[0])))
+		return { _UE_VERSION, "Not set" };
+
 	return { _UE_VERSION, UEVersionNames[_UE_VERSION] };
 }
 
